@@ -10,10 +10,8 @@ import java.util.Optional;
 
 @Service
 public class VersionService {
-
     @Autowired
     VersionRepository versionRepository;
-
 
     //GET
     public List<Version> readAllVersion() {
@@ -42,5 +40,4 @@ public class VersionService {
     public void deleteVersionById(int id) {
         versionRepository.deleteById(id);
     }
-
 }
