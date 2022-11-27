@@ -29,19 +29,17 @@ public class VersionService {
     }
 
     //POST
-
     public Version addVersion(Version version) {
         return versionRepository.save(version);
     }
 
     //PUT
-
     public Version editVersion(Version version) {
         return versionRepository.save(version);
     }
 
     //DELETE
-    public void deleteVersionById(int id){
+    public void deleteVersionById(int id) {
         versionRepository.deleteById(id);
     }
 

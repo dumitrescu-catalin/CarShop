@@ -35,24 +35,19 @@ public class OrderService {
     }
 
     //POST
-
     public Order addNewOrder(Order order) {
         return orderRepository.save(order);
     }
 
     //Update
-
     public Order updateOrder(Order order) {
         return orderRepository.save(order);
     }
 
     //Delete
-
     public void deleteOrder(int id) {
         orderRepository.deleteById(id);
     }
-
-
 
 
 }

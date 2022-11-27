@@ -3,7 +3,6 @@ package com.carShop.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import org.aspectj.weaver.ast.Or;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,6 +12,10 @@ import java.util.List;
 @Table(name = "cars")
 public class Car {
 
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.LAZY,
+            mappedBy = "cars")
+    List<Order> orders;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -28,19 +31,9 @@ public class Car {
     private int powerHp;
     @Column(name = "price")
     private double price;
-
-    @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY,
-            mappedBy = "cars")
-    List<Order> orders;
-
-
-
     @ManyToOne
     @JoinColumn(name = "version_id")
     private Version version;
-
-
 
 
 }

@@ -39,7 +39,7 @@ public class CarService {
         return carRepository.findAllCarsByEngineModel(engineModel);
     }
 
-    public List<Car> getAllCarsPrice(double price){
+    public List<Car> getAllCarsPrice(double price) {
         return carRepository.getAllCarsByPrice(price);
 
     }
@@ -50,18 +50,15 @@ public class CarService {
     }
 
     //EDIT
-    public Car editCar(Car car){
+    public Car editCar(Car car) {
         return carRepository.save(car);
     }
 
     //DELETE
 
-    public void deleteCarById(int id){
+    public void deleteCarById(int id) {
         carRepository.deleteById(id);
     }
-
-
-
 
 
 }

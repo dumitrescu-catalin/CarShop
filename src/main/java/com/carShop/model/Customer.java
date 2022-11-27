@@ -2,9 +2,6 @@ package com.carShop.model;
 
 
 import lombok.Data;
-import org.aspectj.weaver.ast.Or;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,6 +11,8 @@ import java.util.List;
 @Table(name = "customers")
 public class Customer {
 
+    @OneToMany
+    List<Order> orders;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -25,11 +24,5 @@ public class Customer {
     private String address;
     @Column(name = "phone_number")
     private int phoneNumber;
-
-
-    @OneToMany
-    List<Order> orders;
-
-
 
 }

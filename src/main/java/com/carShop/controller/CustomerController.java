@@ -78,13 +78,12 @@ public class CustomerController {
 
     //DELETE
     @DeleteMapping("/deleteCustomer/{id}")
-    public ResponseEntity<?> deleteCustomer(@PathVariable int id ){
-        customerService.getCustomerById(id).orElseThrow(()-> new ResourceNotFoundException("Customer with id: " + id + " not found in DB!"));
+    public ResponseEntity<?> deleteCustomer(@PathVariable int id) {
+        customerService.getCustomerById(id).orElseThrow(() -> new ResourceNotFoundException("Customer with id: " + id + " not found in DB!"));
         customerService.deleteCustomerById(id);
 
         return new ResponseEntity<>("Customer with id: " + id + "deleted successfully", HttpStatus.OK);
     }
-
 
 
 }

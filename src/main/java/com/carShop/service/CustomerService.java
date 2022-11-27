@@ -39,18 +39,18 @@ public class CustomerService {
 
     //POST
 
-    public Customer addCustomer(Customer customer){
+    public Customer addCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 
     //PUT
-    public Customer editCustomer(Customer customer){
+    public Customer editCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 
     //DELETE
 
-    public void deleteCustomerById(int id){
+    public void deleteCustomerById(int id) {
         customerRepository.deleteById(id);
     }
 

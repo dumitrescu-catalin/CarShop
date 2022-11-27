@@ -1,4 +1,5 @@
 package com.carShop.model;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
@@ -12,19 +13,7 @@ import java.util.List;
 @Table(name = "orders")
 public class Order {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(name = "order_name")
-    private String name;
     LocalDate date;
-
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
-
-
     @ManyToMany
     @JoinTable(
             name = "CARS_ORDERS",
@@ -32,6 +21,15 @@ public class Order {
             inverseJoinColumns = @JoinColumn(name = "CARS_ID", referencedColumnName = "ID")
     )
     List<Car> cars;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Column(name = "order_name")
+    private String name;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 
 
 }

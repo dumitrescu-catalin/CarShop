@@ -58,8 +58,8 @@ public class VersionController {
 
     //DELETE
     @DeleteMapping("/deleteVersionById/{id}")    //localhost:8080/api/versions/deleteVersionById
-    public ResponseEntity<?> deleteVersion(@PathVariable int id){
-        versionService.readAllVersionById(id).orElseThrow(()-> new ResourceNotFoundException("There are no version with id: " + id + " in DB!"));
+    public ResponseEntity<?> deleteVersion(@PathVariable int id) {
+        versionService.readAllVersionById(id).orElseThrow(() -> new ResourceNotFoundException("There are no version with id: " + id + " in DB!"));
         versionService.deleteVersionById(id);
 
         return new ResponseEntity<>("Product with id: " + id + " deleted successfully!", HttpStatus.OK);
