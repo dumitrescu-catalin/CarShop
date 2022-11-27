@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface VersionRepository extends JpaRepository<Version, Integer> {
-
     List<Version> getVersionByName(String name);
-
 }
