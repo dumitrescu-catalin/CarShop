@@ -44,8 +44,8 @@ public class CustomerController {
         return ResponseEntity.ok(customerList);
     }
 
-    @GetMapping("/customersByEmail/{emailAddress}")        //localhost:8080/api/customers/customersByEmail
-    public ResponseEntity<List<Customer>> getCustomerByEmailAddress(@PathVariable String emailAddress) {
+    @GetMapping("/customersByEmail")        //localhost:8080/api/customers/customersByEmail
+    public ResponseEntity<List<Customer>> getCustomerByEmailAddress(@RequestParam(value = "email") String emailAddress) {
         List<Customer> customerList = customerService.getCustomerByEmailAddress(emailAddress);
         if (customerList.size() == 0) {
             throw new ResourceNotFoundException("Customers with email_Address" + emailAddress + " not found!");
@@ -53,7 +53,7 @@ public class CustomerController {
         return new ResponseEntity<>(customerList, HttpStatus.OK);
     }
 
-    @GetMapping("/customersByAddressAndPhoneNumber/{address}/{phoneNumber}")        //localhost:8080/api/customers/customersByEmail
+    @GetMapping("/customersByAddressAndPhoneNumber/{address}/{phoneNumber}")        //localhost:8080/api/customers/customersByAddressAndPhoneNumber
     public ResponseEntity<List<Customer>> getCustomerByAddressAndPhoneNumber(@PathVariable String address, @PathVariable int phoneNumber) {
         List<Customer> customerList = customerService.getCustomerByAddressAndPhoneNumber(address, phoneNumber);
         if (customerList.size() == 0) {
