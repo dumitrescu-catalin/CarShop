@@ -24,5 +24,4 @@ public class Version {
     @OneToMany(fetch = FetchType.LAZY)
     private List<Car> Cars;
 
-
 }

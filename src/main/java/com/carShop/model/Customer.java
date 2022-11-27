@@ -1,8 +1,5 @@
 package com.carShop.model;
-
-
 import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,8 +8,6 @@ import java.util.List;
 @Table(name = "customers")
 public class Customer {
 
-    @OneToMany
-    List<Order> orders;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -24,5 +19,8 @@ public class Customer {
     private String address;
     @Column(name = "phone_number")
     private int phoneNumber;
+
+    @OneToMany
+    List<Order> orders;
 
 }
