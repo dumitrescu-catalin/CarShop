@@ -35,13 +35,10 @@ public class Car {
     List<Order> orders;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "CAR_VERSION",
-            joinColumns = @JoinColumn(name = "CAR_ID", referencedColumnName = "ID"),
-            inverseJoinColumns = @JoinColumn(name = "VERSION_ID", referencedColumnName = "ID")
-    )
-    Version version;
+
+    @ManyToOne
+    @JoinColumn(name = "version_id")
+    private Version version;
 
 
 
