@@ -1,11 +1,8 @@
 package com.carShop.model;
-
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-
-import javax.persistence.*;
 import java.util.List;
+import jakarta.persistence.*;
 
 @Data
 @Entity
@@ -19,7 +16,6 @@ public class Version {
     private String name;
     @Column(name = "version_description")
     private String description;
-
     @JsonIgnore
     @OneToMany(fetch = FetchType.LAZY)
     private List<Car> Cars;
