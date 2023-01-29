@@ -1,5 +1,5 @@
-package com.carShop.repository;
-import com.carShop.model.Order;
+package com.carShop.car.repository;
+import com.carShop.car.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.time.LocalDate;

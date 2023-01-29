@@ -1,6 +1,6 @@
-package com.carShop.service;
-import com.carShop.model.Order;
-import com.carShop.repository.OrderRepository;
+package com.carShop.car.service;
+import com.carShop.car.model.Order;
+import com.carShop.car.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;

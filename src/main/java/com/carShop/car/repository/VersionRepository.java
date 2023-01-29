@@ -1,5 +1,5 @@
-package com.carShop.repository;
-import com.carShop.model.Version;
+package com.carShop.car.repository;
+import com.carShop.car.model.Version;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
