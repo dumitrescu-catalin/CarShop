@@ -1,7 +1,7 @@
-package com.carShop.controller;
+package com.carShop.car.controller;
 import com.carShop.exception.ResourceNotFoundException;
-import com.carShop.model.Order;
-import com.carShop.service.OrderService;
+import com.carShop.car.model.Order;
+import com.carShop.car.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;

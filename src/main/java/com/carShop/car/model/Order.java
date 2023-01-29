@@ -1,5 +1,6 @@
-package com.carShop.model;
+package com.carShop.car.model;
 
+import com.carShop.customer.Customer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;

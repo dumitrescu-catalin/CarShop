@@ -1,6 +1,6 @@
-package com.carShop.service;
-import com.carShop.model.Car;
-import com.carShop.repository.CarRepository;
+package com.carShop.car.service;
+import com.carShop.car.model.Car;
+import com.carShop.car.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

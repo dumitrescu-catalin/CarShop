@@ -1,7 +1,7 @@
-package com.carShop.controller;
+package com.carShop.car.controller;
 import com.carShop.exception.ResourceNotFoundException;
-import com.carShop.model.Car;
-import com.carShop.service.CarService;
+import com.carShop.car.model.Car;
+import com.carShop.car.service.CarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -72,7 +72,7 @@ public class CarController {
     public ResponseEntity<List<Car>> getCarsByPrice(@PathVariable double price) {
         List<Car> carList = carService.getAllCarsPrice(price);
         if (carList.size() == 0) {
-            throw new ResourceNotFoundException("Cars with brand: " + price + " not found in DB!");
+            throw new ResourceNotFoundException("Cars with price: " + price + " not found in DB!");
         }
         return ResponseEntity.ok(carList);
     }

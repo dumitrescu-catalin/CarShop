@@ -1,7 +1,7 @@
-package com.carShop.controller;
+package com.carShop.car.controller;
 import com.carShop.exception.ResourceNotFoundException;
-import com.carShop.model.Version;
-import com.carShop.service.VersionService;
+import com.carShop.car.model.Version;
+import com.carShop.car.service.VersionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
